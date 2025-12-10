@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { SlideProps } from '../types';
 import { SlideLayout } from './SlideLayout';
-import nubankBg from "./imagens/nubank.png";
+import nubankBg from "./assets/nubank-bg.svg";
 
 export const Slide1: React.FC<SlideProps> = (props) => {
   return (
@@ -12,7 +12,7 @@ export const Slide1: React.FC<SlideProps> = (props) => {
       backgroundImage={nubankBg}
     >
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#225B8E] via-[#2A898D]/90 to-[#2A898D]/40 z-0" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#225B8E] via-[#2A898D]/90 to-[#2A898D]/40 z-0 pointer-events-none" />
 
       <div className="relative z-10 w-full h-full flex flex-row items-center px-16">
         

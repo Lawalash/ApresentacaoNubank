@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Slide1 } from './components/Slide1';
 import { Slide2 } from './components/Slide2';
 import { Slide3 } from './components/Slide3';
@@ -9,17 +9,31 @@ export const Presentation: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(1);
   const totalSlides = 5;
 
-  const nextSlide = () => {
-    if (currentSlide < totalSlides) {
-      setCurrentSlide(prev => prev + 1);
-    }
-  };
+  const nextSlide = useCallback(() => {
+    setCurrentSlide(prev => (prev < totalSlides ? prev + 1 : prev));
+  }, [totalSlides]);
 
-  const prevSlide = () => {
-    if (currentSlide > 1) {
-      setCurrentSlide(prev => prev - 1);
-    }
-  };
+  const prevSlide = useCallback(() => {
+    setCurrentSlide(prev => (prev > 1 ? prev - 1 : prev));
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'ArrowRight' || event.key === 'PageDown') {
+        nextSlide();
+      }
+
+      if (event.key === 'ArrowLeft' || event.key === 'PageUp') {
+        prevSlide();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [nextSlide, prevSlide]);
 
   const commonProps = {
     slideNumber: currentSlide,
