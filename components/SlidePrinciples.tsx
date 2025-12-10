@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { SlideProps } from '../types';
+import { SlideLayout } from './SlideLayout';
 
 const PRINCIPLES = [
   "ESTAMOS AQUI PARA FAZER MELHOR QUE TODOS.",
@@ -14,29 +16,15 @@ const PRINCIPLES = [
   "SOMOS FELIZES COM O QUE FAZEMOS."
 ];
 
-export const SlidePrinciples: React.FC = () => {
+export const SlidePrinciples: React.FC<SlideProps> = (props) => {
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-white font-poppins text-nu-primary selection:bg-nu-sky selection:text-white flex">
-      {/* Sidebar */}
-      <aside className="h-full w-[4%] min-w-[60px] bg-gradient-to-b from-nu-primary to-nu-secondary flex flex-col justify-end items-center pb-8 shadow-lg z-20 shrink-0">
-        {/* Logo */}
-        <div className="w-12 h-32 bg-white/10 rounded opacity-60" />
-      </aside>
+    <SlideLayout
+      {...props}
+      title="Princípios Inegociáveis"
+      subtitle="Base para decisão, execução e liderança"
+    >
 
-      {/* Main Content */}
-      <main className="flex-1 flex flex-col relative z-10 px-12 py-10">
-        
-        {/* Header */}
-        <header className="mb-8">
-          <h1 className="font-rubik text-4xl font-bold bg-gradient-to-r from-nu-primary to-nu-secondary bg-clip-text text-transparent">
-            Princípios Inegociáveis
-          </h1>
-          <h2 className="font-poppins text-xl text-nu-mid mt-1 font-medium">
-            Base para decisão, execução e liderança
-          </h2>
-          <div className="h-[2px] w-full mt-4 bg-gradient-to-r from-nu-primary to-nu-sky opacity-60 rounded-full" />
-        </header>
-
+      <div className="relative h-full w-full flex flex-col">
         {/* Content - Two columns layout */}
         <div className="flex-1 flex gap-16 relative">
           {/* Left side - Title */}
@@ -79,7 +67,7 @@ export const SlidePrinciples: React.FC = () => {
                   <span className="text-nu-secondary font-bold text-lg min-w-[40px] pt-1">
                     {String(index + 1).padStart(2, '0')}.
                   </span>
-                  <p className="text-base text-gray-700 leading-relaxed font-medium pt-1">
+                  <p className={`text-base leading-relaxed pt-1 ${index === 1 ? 'text-gray-900 font-bold' : 'text-gray-700 font-medium'}`}>
                     {principle}
                   </p>
                 </motion.div>
@@ -87,27 +75,7 @@ export const SlidePrinciples: React.FC = () => {
             </div>
           </motion.div>
         </div>
-
-        {/* Footer / Navigation */}
-        <footer className="absolute bottom-6 right-8 flex items-center gap-6 text-nu-secondary">
-          <span className="font-poppins text-sm opacity-80 font-medium">
-            3 / 5
-          </span>
-          
-          <div className="flex gap-3">
-            <button className="p-2 rounded-full hover:bg-black/10 transition-colors">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M15 19l-7-7 7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-            <button className="p-2 rounded-full hover:bg-black/10 transition-colors">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-          </div>
-        </footer>
-      </main>
-    </div>
+      </div>
+    </SlideLayout>
   );
 };
