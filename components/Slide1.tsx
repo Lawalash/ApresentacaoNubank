@@ -27,13 +27,13 @@ export const Slide1: React.FC<SlideProps> = (props) => {
             Governança <br /> Locker
           </motion.h1>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
             className="font-poppins text-2xl font-light text-nu-sky pt-2"
           >
-            Treinamento TABI & LOCKER – Nubank
+            Conversa rápida sobre jornada, pausas e hora extra
           </motion.p>
 
           <motion.div 
@@ -43,13 +43,13 @@ export const Slide1: React.FC<SlideProps> = (props) => {
             className="h-1 bg-nu-cyan my-4 rounded-full"
           />
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
             className="font-poppins text-lg opacity-90 font-medium tracking-wide"
           >
-            Operações · Time de Governança Locker
+            Treinamentos rápidos: LOCKER (atendentes) + TABI (liderança)
           </motion.p>
         </div>
 
@@ -66,9 +66,9 @@ export const Slide1: React.FC<SlideProps> = (props) => {
              <div className="absolute bottom-0 left-0 w-40 h-40 bg-nu-primary/40 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
              
              <div className="text-white text-center z-10">
-                <h3 className="font-rubik text-3xl mb-2 font-semibold">Excelência Operacional</h3>
+                <h3 className="font-rubik text-3xl mb-2 font-semibold">Operação Nubank</h3>
                 <p className="font-poppins text-sm opacity-90 leading-relaxed">
-                  Padronização e segurança<br/>na jornada de atendimento.
+                  Alinhamento de liderança e supervisão<br/>para Locker e TABI.
                 </p>
              </div>
           </motion.div>
