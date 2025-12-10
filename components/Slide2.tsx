@@ -27,19 +27,19 @@ export const Slide2: React.FC<SlideProps> = (props) => {
             <ul className="space-y-4 font-poppins text-gray-600 leading-relaxed">
               <li className="flex items-start gap-3">
                 <span className="mt-1.5 w-2 h-2 rounded-full bg-nu-mid shrink-0" />
-                <span>Governança Locker em reta final nos segmentos <strong>PJ_CHAT</strong>, e <strong>PJ_CHAT_N2</strong>.</span>
+                <span>Governança Locker ativa nos squads PJ_CHAT e PJ_CHAT_N2, pronta para a operação completa.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-1.5 w-2 h-2 rounded-full bg-nu-mid shrink-0" />
-                <span>Ajustes técnicos de agente, buffer e monitoramento já aplicados.</span>
+                <span>Ajustes técnicos de agente, buffer e monitoramento já concluídos.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-1.5 w-2 h-2 rounded-full bg-nu-mid shrink-0" />
-                <span className="text-nu-primary font-medium">Necessidade crítica: garantir comportamento padronizado via treinamento massivo.</span>
+                <span className="text-nu-primary font-medium">Gargalo agora é aderência aos treinamentos Locker (atendentes) e TABI (liderança).</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-1.5 w-2 h-2 rounded-full bg-nu-mid shrink-0" />
-                <span>Conteúdo aborda: uso correto do Locker, pausas, jornada, HE e integração TABI.</span>
+                <span>Sem treinamento, aumentam riscos de jornada fora do horário, pausas sem registro e HE sem controle.</span>
               </li>
             </ul>
           </div>
@@ -60,18 +60,18 @@ export const Slide2: React.FC<SlideProps> = (props) => {
             
             <div className="space-y-6">
               <div>
-                <h4 className="font-bold text-nu-sky text-lg mb-1">Alinhamento Único</h4>
-                <p className="text-sm opacity-90">Entendimento sobre tolerância, login/logout e bloqueios.</p>
-              </div>
-              
-              <div>
-                <h4 className="font-bold text-nu-sky text-lg mb-1">Papel da Liderança</h4>
-                <p className="text-sm opacity-90">Fortalecer aprovação, qualificação e acompanhamento de HE via TABI.</p>
+                <h4 className="font-bold text-nu-sky text-lg mb-1">Locker na ponta</h4>
+                <p className="text-sm opacity-90">Atendentes treinados para abrir/fechar jornada certo e respeitar pausas.</p>
               </div>
 
               <div>
-                <h4 className="font-bold text-nu-sky text-lg mb-1">Redução de Passivo</h4>
-                <p className="text-sm opacity-90">Sustentar a redução de riscos trabalhistas na jornada.</p>
+                <h4 className="font-bold text-nu-sky text-lg mb-1">TABI na liderança</h4>
+                <p className="text-sm opacity-90">Supervisores qualificados para aprovar HE e dar rastreabilidade.</p>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-nu-sky text-lg mb-1">Operação segura</h4>
+                <p className="text-sm opacity-90">Jornada correta, pausas NR 17 garantidas e menor risco trabalhista.</p>
               </div>
             </div>
           </div>

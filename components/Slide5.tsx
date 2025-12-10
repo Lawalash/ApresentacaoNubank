@@ -23,7 +23,7 @@ export const Slide5: React.FC<SlideProps> = (props) => {
             Obrigado
           </h1>
           <p className="font-poppins text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Vamos juntos garantir a excelência e a segurança da operação Nubank.
+            Governança Locker é pilar de excelência e segurança; treinamentos LOCKER + TABI são o passo mínimo para jornada correta.
           </p>
         </motion.div>
 
@@ -43,6 +43,15 @@ export const Slide5: React.FC<SlideProps> = (props) => {
              </span>
           </div>
         </motion.div>
+
+        <motion.p
+          className="mt-10 font-poppins text-lg text-nu-primary font-semibold"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+        >
+          Vamos garantir 100% de aderência aos treinamentos.
+        </motion.p>
 
         {/* Final Copyright */}
         <div className="absolute bottom-4 text-center">
