@@ -1,0 +1,22 @@
+:root {
+  color: #225B8E;
+  font-family: 'Poppins', 'Rubik', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #f5f7fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(circle at 20% 20%, rgba(69, 197, 222, 0.08), transparent 35%),
+              radial-gradient(circle at 80% 0%, rgba(42, 137, 141, 0.08), transparent 30%),
+              #f8fafc;
+}
+
+#root {
+  min-height: 100vh;
+}

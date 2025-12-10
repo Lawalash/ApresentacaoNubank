@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { SlideProps } from '../types';
 import { SlideLayout } from './SlideLayout';
-import nubankBg from "./imagens/nubank.png";
+import nubankBg from "./assets/nubank-bg.svg";
 
 export const Slide1: React.FC<SlideProps> = (props) => {
   return (
