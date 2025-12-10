@@ -27,7 +27,7 @@ export const Slide2: React.FC<SlideProps> = (props) => {
             <ul className="space-y-4 font-poppins text-gray-600 leading-relaxed">
               <li className="flex items-start gap-3">
                 <span className="mt-1.5 w-2 h-2 rounded-full bg-nu-mid shrink-0" />
-                <span>Governança Locker em reta final nos segmentos <strong>PJ_CHAT</strong>, <strong>PJ_CHAT_N2</strong> e <strong>CSI_CHAT</strong>.</span>
+                <span>Governança Locker em reta final nos segmentos <strong>PJ_CHAT</strong>, e <strong>PJ_CHAT_N2</strong>.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-1.5 w-2 h-2 rounded-full bg-nu-mid shrink-0" />
