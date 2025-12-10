@@ -1,7 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { SlideProps } from '../types';
-import { SlideLayout } from './SlideLayout';
 
 const PRINCIPLES = [
   "ESTAMOS AQUI PARA FAZER MELHOR QUE TODOS.",
@@ -16,80 +14,100 @@ const PRINCIPLES = [
   "SOMOS FELIZES COM O QUE FAZEMOS."
 ];
 
-export const SlidePrinciples: React.FC<SlideProps> = (props) => {
+export const SlidePrinciples: React.FC = () => {
   return (
-    <SlideLayout
-      {...props}
-      title="Princípios Innegociáveis"
-      subtitle="Base para decisão, execução e liderança"
-    >
-      <div className="relative h-full w-full flex flex-col">
-        {/* Background accents */}
-        <div className="absolute inset-0 pointer-events-none opacity-70">
-          <div className="absolute -top-10 -left-12 w-48 h-48 bg-nu-secondary/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-10 w-64 h-64 bg-nu-sky/10 rounded-full blur-3xl" />
-        </div>
+    <div className="relative w-full h-screen overflow-hidden bg-white font-poppins text-nu-primary selection:bg-nu-sky selection:text-white flex">
+      {/* Sidebar */}
+      <aside className="h-full w-[4%] min-w-[60px] bg-gradient-to-b from-nu-primary to-nu-secondary flex flex-col justify-end items-center pb-8 shadow-lg z-20 shrink-0">
+        {/* Logo */}
+        <div className="w-12 h-32 bg-white/10 rounded opacity-60" />
+      </aside>
 
-        <div className="relative z-10 grid grid-cols-1 xl:grid-cols-3 gap-10 h-full">
-          {/* Intro card */}
+      {/* Main Content */}
+      <main className="flex-1 flex flex-col relative z-10 px-12 py-10">
+        
+        {/* Header */}
+        <header className="mb-8">
+          <h1 className="font-rubik text-4xl font-bold bg-gradient-to-r from-nu-primary to-nu-secondary bg-clip-text text-transparent">
+            Princípios Inegociáveis
+          </h1>
+          <h2 className="font-poppins text-xl text-nu-mid mt-1 font-medium">
+            Base para decisão, execução e liderança
+          </h2>
+          <div className="h-[2px] w-full mt-4 bg-gradient-to-r from-nu-primary to-nu-sky opacity-60 rounded-full" />
+        </header>
+
+        {/* Content - Two columns layout */}
+        <div className="flex-1 flex gap-16 relative">
+          {/* Left side - Title */}
           <motion.div
-            className="xl:col-span-1 bg-gradient-to-br from-nu-primary to-nu-secondary text-white rounded-2xl p-10 shadow-xl flex flex-col justify-between"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            className="w-1/3 flex flex-col justify-center"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="space-y-4">
-              <p className="text-sm uppercase tracking-[0.2em] font-semibold text-white/80">Operação Nubank</p>
-              <h2 className="font-rubik text-3xl leading-tight">O que nos guia em cada decisão</h2>
-              <p className="text-base text-white/90 leading-relaxed">
-                Cultura traduzida em ação: foco no simples, inovação constante e excelência na entrega.
+            <div className="space-y-6">
+              <div>
+                <p className="text-sm font-semibold text-nu-primary/60 uppercase tracking-widest mb-2">Operação Nubank</p>
+                <h2 className="font-rubik text-5xl font-bold text-nu-primary leading-tight">
+                  PRINCÍPIOS<br />INEGOCIÁVEIS
+                </h2>
+              </div>
+              <div className="h-1 w-24 bg-gradient-to-r from-nu-primary to-nu-sky rounded-full" />
+              <p className="text-base text-gray-600 leading-relaxed">
+                O que nos guia em cada decisão: foco no simples, inovação constante e excelência na entrega.
               </p>
-            </div>
-
-            <div className="mt-6 space-y-3 text-sm text-white/90">
-              <div className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-white" />
-                <span>Alinhar expectativas de liderança e time.</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-white" />
-                <span>Usar os princípios para orientar decisões rápidas.</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-white" />
-                <span>Garantir consistência no dia a dia da operação.</span>
-              </div>
             </div>
           </motion.div>
 
-          {/* Principles list */}
+          {/* Right side - Principles list */}
           <motion.div
-            className="xl:col-span-2 bg-white rounded-2xl shadow-lg border border-nu-primary/10 p-8 overflow-hidden"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            className="w-2/3 flex flex-col overflow-y-auto pr-4"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <div className="flex items-center justify-between mb-6">
-              <div>
-                <p className="text-sm font-semibold text-nu-primary/70 uppercase tracking-widest">Princípios</p>
-                <h3 className="font-rubik text-2xl text-nu-primary">Como agimos e decidimos</h3>
-              </div>
-              <div className="h-10 w-10 rounded-full bg-nu-primary/10 border border-nu-primary/20 flex items-center justify-center text-nu-primary font-bold">
-                10
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-x-10 gap-y-5 max-h-[60vh] overflow-y-auto pr-2">
+            <div className="space-y-4">
               {PRINCIPLES.map((principle, index) => (
-                <div key={principle} className="flex items-start gap-4 bg-nu-sky/5 rounded-xl px-4 py-3 border border-nu-primary/5">
-                  <span className="text-nu-secondary font-bold text-sm mt-1">{index + 1}</span>
-                  <p className="text-sm text-gray-700 leading-relaxed">{principle}</p>
-                </div>
+                <motion.div
+                  key={principle}
+                  className="flex items-start gap-6 pb-4 border-b border-nu-primary/10 last:border-b-0"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: 0.1 + index * 0.05 }}
+                >
+                  <span className="text-nu-secondary font-bold text-lg min-w-[40px] pt-1">
+                    {String(index + 1).padStart(2, '0')}.
+                  </span>
+                  <p className="text-base text-gray-700 leading-relaxed font-medium pt-1">
+                    {principle}
+                  </p>
+                </motion.div>
               ))}
             </div>
           </motion.div>
         </div>
-      </div>
-    </SlideLayout>
+
+        {/* Footer / Navigation */}
+        <footer className="absolute bottom-6 right-8 flex items-center gap-6 text-nu-secondary">
+          <span className="font-poppins text-sm opacity-80 font-medium">
+            3 / 5
+          </span>
+          
+          <div className="flex gap-3">
+            <button className="p-2 rounded-full hover:bg-black/10 transition-colors">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M15 19l-7-7 7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            <button className="p-2 rounded-full hover:bg-black/10 transition-colors">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </footer>
+      </main>
+    </div>
   );
 };
