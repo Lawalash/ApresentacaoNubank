@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { SlideLayoutProps } from '../types';
-import timeLogo from "./assets/time-logo.svg";
+import timeLogo from "./assets/time-logo.png;
 
 export const SlideLayout: React.FC<SlideLayoutProps> = ({
   children,
