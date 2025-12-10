@@ -46,7 +46,7 @@ export const Slide5: React.FC<SlideProps> = (props) => {
 
         {/* Final Copyright */}
         <div className="absolute bottom-4 text-center">
-          <p className="text-xs text-gray-300 font-poppins">NUBANK © 2025</p>
+          <p className="text-xs text-gray-300 font-poppins">TRANSFORMAÇÃO DIGITAL & IA © 2025</p>
         </div>
 
       </div>
