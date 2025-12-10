@@ -12,7 +12,7 @@ export const Slide1: React.FC<SlideProps> = (props) => {
       backgroundImage={nubankBg}
     >
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#225B8E] via-[#2A898D]/90 to-[#2A898D]/40 z-0" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#225B8E] via-[#2A898D]/90 to-[#2A898D]/40 z-0 pointer-events-none" />
 
       <div className="relative z-10 w-full h-full flex flex-row items-center px-16">
         
