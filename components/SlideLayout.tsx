@@ -29,10 +29,11 @@ export const SlideLayout: React.FC<SlideLayoutProps> = ({
         <aside className="h-full w-[4%] min-w-[60px] bg-gradient-to-b from-nu-primary to-nu-secondary flex flex-col justify-end items-center pb-8 shadow-lg z-20 shrink-0">
           {/* Logo Vertical - using img tag as requested */}
           <img 
-            src={timeLogo} 
-            alt="Time Logo" 
-            className="w-8 h-auto object-contain"
-          />
+          src={timeLogo} 
+          alt="Time Logo" 
+          className="object-contain rotate-90"
+          style={{ width: '300px', height: 'auto' }}
+        />
         </aside>
       )}
 
