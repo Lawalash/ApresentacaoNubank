@@ -1,86 +1,78 @@
 import React from 'react';
-import SlideLayout from './SlideLayout';
 import { motion } from 'framer-motion';
+import { SlideProps } from '../types';
+import { SlideLayout } from './SlideLayout';
 
-const Slide4: React.FC = () => {
+export const Slide4: React.FC<SlideProps> = (props) => {
   const cardVariants = {
-    hidden: { opacity: 0, scale: 0.95 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } }
+    hidden: { opacity: 0, y: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.15, duration: 0.5 }
+    })
   };
 
   return (
-    <SlideLayout
+    <SlideLayout 
+      {...props} 
       title="Governança Locker"
-      subtitle="Planejamento da Expansão"
-      tagline="Definições da Liderança"
+      subtitle="Planejamento da Expansão · Definições da Liderança"
     >
-      <div className="h-full flex flex-col">
-        {/* Grid Container */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto w-full flex-grow content-center">
+      <div className="flex flex-col h-full justify-center pb-8">
+        
+        {/* Grid Layout: 2 Top, 1 Bottom Centered */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-6xl mx-auto">
           
-          {/* Card 1 */}
+          {/* Card 1: Ponto de Decisão */}
           <motion.div 
+            custom={0}
             variants={cardVariants}
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-nu-primary relative group"
+            animate="visible"
+            className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 shadow-md border border-gray-200"
           >
-            <div className="absolute top-6 right-6 w-8 h-8 rounded-full bg-nu-primary/10 flex items-center justify-center text-nu-primary">
-              1
-            </div>
-            <h3 className="font-rubik text-2xl text-nu-primary mb-4 font-medium group-hover:text-nu-secondary transition-colors">
-              Ponto de Decisão
-            </h3>
-            <p className="font-poppins text-lg text-gray-700">
-              Em quanto tempo conseguimos treinar <span className="font-bold">100% da operação NUBANK?</span>
+            <h3 className="font-rubik text-xl text-nu-primary mb-3 font-semibold">Ponto de Decisão</h3>
+            <p className="font-poppins text-gray-600 mb-2 leading-relaxed">
+              Em quanto tempo conseguimos treinar <strong>100% da operação NUBANK</strong>?
             </p>
-            <p className="font-poppins text-base text-gray-500 mt-2">
+            <p className="font-poppins text-sm text-gray-400">
               Considerando ~3 min para Locker e ~4 min para TABI.
             </p>
           </motion.div>
 
-          {/* Card 2 */}
+          {/* Card 2: Janela Ideal */}
           <motion.div 
+            custom={1}
             variants={cardVariants}
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-nu-secondary relative group"
+            animate="visible"
+            className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 shadow-md border border-gray-200"
           >
-             <div className="absolute top-6 right-6 w-8 h-8 rounded-full bg-nu-secondary/10 flex items-center justify-center text-nu-secondary">
-              2
-            </div>
-            <h3 className="font-rubik text-2xl text-nu-secondary mb-4 font-medium">
-              Janela Ideal
-            </h3>
-            <p className="font-poppins text-lg text-gray-700">
+            <h3 className="font-rubik text-xl text-nu-mid mb-3 font-semibold">Janela Ideal</h3>
+            <p className="font-poppins text-gray-600 leading-relaxed">
               Qual a data de início e data limite para concluirmos os treinamentos de Locker (atendentes) e TABI (liderança)?
             </p>
           </motion.div>
 
-          {/* Card 3 (Centered below) */}
-          <motion.div 
-            variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="md:col-span-2 md:max-w-xl mx-auto w-full bg-white rounded-2xl p-8 shadow-lg border-t-4 border-nu-accent-1 relative group"
-          >
-             <div className="absolute top-6 right-6 w-8 h-8 rounded-full bg-nu-accent-1/10 flex items-center justify-center text-nu-accent-1">
-              3
-            </div>
-            <h3 className="font-rubik text-2xl text-nu-accent-1 mb-4 font-medium text-center">
-              Critério de Sucesso
-            </h3>
-            <p className="font-poppins text-lg text-gray-700 text-center">
-              Qual o percentual mínimo de aderência que consideramos sucesso da etapa?
-              <br/>
-              <span className="text-sm text-gray-400 mt-1 block">(ex.: 95%, 98% ou 100%)</span>
-            </p>
-          </motion.div>
+          {/* Card 3: Critério de Sucesso - Centered */}
+          <div className="md:col-span-2 md:w-2/3 md:mx-auto w-full">
+            <motion.div 
+              custom={2}
+              variants={cardVariants}
+              initial="hidden"
+              animate="visible"
+              className="bg-gradient-to-r from-nu-primary to-nu-secondary text-white rounded-2xl p-8 shadow-lg text-center"
+            >
+              <h3 className="font-rubik text-2xl mb-4 font-semibold">Critério de Sucesso</h3>
+              <p className="font-poppins text-lg leading-relaxed">
+                Qual o percentual mínimo de aderência que consideramos sucesso da etapa?
+              </p>
+              <p className="font-poppins text-nu-sky font-bold mt-2 text-xl">
+                (ex.: 95%, 98% ou 100%)
+              </p>
+            </motion.div>
+          </div>
 
         </div>
 
@@ -89,15 +81,14 @@ const Slide4: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="mt-8 text-center"
+          className="mt-10 text-center"
         >
-          <p className="font-poppins text-gray-600 bg-gray-50 inline-block px-6 py-3 rounded-lg border border-gray-200">
-            <span className="font-bold text-nu-primary">Próximos passos:</span> Estruturar plano com Planejamento (pausas/janelas) e iniciar reports periódicos de aderência.
+          <p className="font-poppins text-nu-primary/80 text-sm font-medium border-t border-gray-200 pt-6 inline-block px-8">
+            Próximos passos: estruturar plano com Planejamento (pausas/janelas) e iniciar reports periódicos de aderência.
           </p>
         </motion.div>
+
       </div>
     </SlideLayout>
   );
 };
-
-export default Slide4;

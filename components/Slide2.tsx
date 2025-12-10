@@ -1,118 +1,82 @@
 import React from 'react';
-import SlideLayout from './SlideLayout';
 import { motion } from 'framer-motion';
+import { SlideProps } from '../types';
+import { SlideLayout } from './SlideLayout';
 
-// Simple check icon component
-const CheckIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-nu-secondary flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-  </svg>
-);
-
-const Slide2: React.FC = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { 
-      opacity: 1,
-      transition: { staggerChildren: 0.2 }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: 20 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }
-  };
-
+export const Slide2: React.FC<SlideProps> = (props) => {
   return (
-    <SlideLayout
+    <SlideLayout 
+      {...props} 
       title="Governança Locker"
-      subtitle="Contexto & Objetivos"
-      tagline="Onde estamos e para onde vamos"
+      subtitle="Contexto & Objetivos · Onde estamos e para onde vamos"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 h-full">
-        
-        {/* Column 1: Contexto Atual */}
+      <div className="grid grid-cols-12 gap-8 h-full">
+        {/* Left Column: Context */}
         <motion.div 
+          className="col-span-12 lg:col-span-7 flex flex-col gap-6"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col justify-center"
+          transition={{ duration: 0.5 }}
         >
-          <h3 className="font-rubik text-2xl text-nu-primary mb-6 border-l-4 border-nu-secondary pl-4">
-            Contexto Atual
-          </h3>
-          <div className="space-y-6 font-poppins text-gray-700 text-lg leading-relaxed">
-            <p>
-              A <strong>Governança Locker</strong> está em reta final de implementação nos segmentos críticos 
-              <span className="text-nu-secondary font-semibold"> PJ_CHAT, PJ_CHAT_N2 e CSI_CHAT</span>.
-            </p>
-            <p>
-              Os ajustes técnicos essenciais de agente, buffer e monitoramento já foram aplicados com sucesso.
-            </p>
-            <div className="bg-nu-primary/5 p-6 rounded-xl border border-nu-primary/10">
-              <p className="font-semibold text-nu-primary mb-2">Necessidade Crítica:</p>
-              <p>
-                Garantir comportamento padronizado via <span className="underline decoration-nu-accent-2 decoration-2">treinamento massivo</span>,
-                abordando uso correto do Locker, pausas, jornada, HE e integração TABI.
-              </p>
-            </div>
+          <div className="bg-nu-primary/5 p-2 px-4 rounded-lg inline-block w-fit">
+            <span className="text-sm font-bold text-nu-primary uppercase tracking-wider">Operações · Nubank</span>
+          </div>
+
+          <div className="bg-white rounded-2xl p-6 border-l-4 border-nu-secondary shadow-sm">
+            <h3 className="font-rubik text-2xl text-nu-primary mb-4">Contexto Atual</h3>
+            <ul className="space-y-4 font-poppins text-gray-600 leading-relaxed">
+              <li className="flex items-start gap-3">
+                <span className="mt-1.5 w-2 h-2 rounded-full bg-nu-mid shrink-0" />
+                <span>Governança Locker em reta final nos segmentos <strong>PJ_CHAT</strong>, <strong>PJ_CHAT_N2</strong> e <strong>CSI_CHAT</strong>.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-1.5 w-2 h-2 rounded-full bg-nu-mid shrink-0" />
+                <span>Ajustes técnicos de agente, buffer e monitoramento já aplicados.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-1.5 w-2 h-2 rounded-full bg-nu-mid shrink-0" />
+                <span className="text-nu-primary font-medium">Necessidade crítica: garantir comportamento padronizado via treinamento massivo.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-1.5 w-2 h-2 rounded-full bg-nu-mid shrink-0" />
+                <span>Conteúdo aborda: uso correto do Locker, pausas, jornada, HE e integração TABI.</span>
+              </li>
+            </ul>
           </div>
         </motion.div>
 
-        {/* Column 2: Objetivos da Expansão */}
-        <div className="flex flex-col justify-center relative">
-          <motion.h3 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="font-rubik text-2xl text-nu-primary mb-6"
-          >
-            Objetivos da Expansão
-          </motion.h3>
-
-          <motion.div 
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="space-y-4"
-          >
-            {/* Card 1 */}
-            <motion.div variants={itemVariants} className="bg-white p-6 rounded-2xl shadow-lg border-l-8 border-nu-primary hover:shadow-xl transition-shadow">
-              <div className="flex items-start gap-4">
-                <CheckIcon />
-                <div>
-                  <h4 className="font-rubik text-xl text-gray-800 font-medium">Alinhamento Único</h4>
-                  <p className="font-poppins text-gray-600 mt-1 text-sm">Entendimento sobre tolerância, login/logout e bloqueios.</p>
-                </div>
+        {/* Right Column: Objectives */}
+        <motion.div 
+          className="col-span-12 lg:col-span-5 flex flex-col justify-center"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <div className="bg-gradient-to-br from-nu-primary to-nu-secondary rounded-2xl p-8 text-white shadow-lg relative overflow-hidden">
+            {/* Background Shape */}
+            <div className="absolute -right-10 -top-10 w-40 h-40 bg-white/10 rounded-full blur-2xl" />
+            
+            <h3 className="font-rubik text-2xl mb-6 border-b border-white/20 pb-2">Objetivos da Expansão</h3>
+            
+            <div className="space-y-6">
+              <div>
+                <h4 className="font-bold text-nu-sky text-lg mb-1">Alinhamento Único</h4>
+                <p className="text-sm opacity-90">Entendimento sobre tolerância, login/logout e bloqueios.</p>
               </div>
-            </motion.div>
-
-            {/* Card 2 */}
-            <motion.div variants={itemVariants} className="bg-white p-6 rounded-2xl shadow-lg border-l-8 border-nu-secondary hover:shadow-xl transition-shadow">
-              <div className="flex items-start gap-4">
-                <CheckIcon />
-                <div>
-                  <h4 className="font-rubik text-xl text-gray-800 font-medium">Papel da Liderança</h4>
-                  <p className="font-poppins text-gray-600 mt-1 text-sm">Fortalecer aprovação, qualificação e acompanhamento de HE via TABI.</p>
-                </div>
+              
+              <div>
+                <h4 className="font-bold text-nu-sky text-lg mb-1">Papel da Liderança</h4>
+                <p className="text-sm opacity-90">Fortalecer aprovação, qualificação e acompanhamento de HE via TABI.</p>
               </div>
-            </motion.div>
 
-            {/* Card 3 */}
-            <motion.div variants={itemVariants} className="bg-white p-6 rounded-2xl shadow-lg border-l-8 border-nu-accent-1 hover:shadow-xl transition-shadow">
-              <div className="flex items-start gap-4">
-                <CheckIcon />
-                <div>
-                  <h4 className="font-rubik text-xl text-gray-800 font-medium">Redução de Passivo</h4>
-                  <p className="font-poppins text-gray-600 mt-1 text-sm">Sustentar a redução de riscos trabalhistas na jornada.</p>
-                </div>
+              <div>
+                <h4 className="font-bold text-nu-sky text-lg mb-1">Redução de Passivo</h4>
+                <p className="text-sm opacity-90">Sustentar a redução de riscos trabalhistas na jornada.</p>
               </div>
-            </motion.div>
-
-          </motion.div>
-        </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </SlideLayout>
   );
 };
-
-export default Slide2;

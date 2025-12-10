@@ -1,5 +1,5 @@
 {
-  "name": "nubank-governance-presentation",
+  "name": "nubank-tabi-&-locker-training",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,7 +11,7 @@
   "dependencies": {
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
-    "framer-motion": "10.16.4"
+    "framer-motion": "^12.23.26"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

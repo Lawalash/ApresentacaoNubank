@@ -1,126 +1,115 @@
 import React from 'react';
-import SlideLayout from './SlideLayout';
 import { motion } from 'framer-motion';
+import { SlideProps } from '../types';
+import { SlideLayout } from './SlideLayout';
 
-// Background Animation Component
-const AnimatedBackground = () => (
-  <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-    <motion.div
-      animate={{
-        scale: [1, 1.2, 1],
-        x: [0, 50, 0],
-        opacity: [0.1, 0.2, 0.1],
-      }}
-      transition={{
-        duration: 10,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }}
-      className="absolute top-10 left-20 w-96 h-96 bg-nu-primary rounded-full blur-[80px]"
-    />
-    <motion.div
-      animate={{
-        scale: [1, 1.3, 1],
-        y: [0, -50, 0],
-        opacity: [0.1, 0.15, 0.1],
-      }}
-      transition={{
-        duration: 12,
-        repeat: Infinity,
-        ease: "easeInOut",
-        delay: 2
-      }}
-      className="absolute bottom-10 right-20 w-[30rem] h-[30rem] bg-nu-secondary rounded-full blur-[100px]"
-    />
-  </div>
-);
-
-const BulletPoint = ({ text }: { text: string }) => (
-  <li className="flex items-start gap-2 mb-2 font-poppins text-sm text-gray-700">
-    <span className="w-1.5 h-1.5 bg-gradient-to-r from-nu-primary to-nu-secondary rounded-full mt-2 flex-shrink-0" />
-    <span>{text}</span>
-  </li>
-);
-
-const Slide3: React.FC = () => {
+export const Slide3: React.FC<SlideProps> = (props) => {
   return (
-    <SlideLayout
+    <SlideLayout 
+      {...props} 
       title="Governança Locker"
-      subtitle="Detalhe dos Treinamentos"
-      tagline="Conteúdo técnico Locker & TABI"
+      subtitle="Detalhe dos Treinamentos · Conteúdo técnico Locker & TABI"
     >
-      <div className="relative w-full h-full flex flex-col justify-center items-center">
-        <AnimatedBackground />
-
-        {/* Cards Container */}
-        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl w-full mx-auto">
-          
-          {/* Locker Card */}
+      <div className="relative h-full flex flex-col">
+        {/* Background Ambient Animation */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden border border-gray-100 flex flex-col"
-          >
-            <div className="bg-gradient-to-r from-nu-primary to-nu-secondary p-4 flex justify-between items-center">
-               <div>
-                  <h3 className="font-rubik text-2xl text-white font-bold">Locker</h3>
-                  <p className="font-poppins text-nu-accent-2 text-sm">Atendentes</p>
-               </div>
-               <span className="bg-white/20 text-white text-xs px-2 py-1 rounded font-poppins">~ 3 min</span>
-            </div>
-            
-            <div className="p-6 flex-1">
-              <ul className="space-y-1">
-                <BulletPoint text="Conceito de Agente Locker e bloqueios de jornada." />
-                <BulletPoint text="Buffer de entrada/saída: como funciona." />
-                <BulletPoint text="Importância do login/logout correto." />
-                <BulletPoint text="Orientações práticas para o dia a dia." />
-              </ul>
-            </div>
-          </motion.div>
-
-          {/* TABI Card */}
+            className="absolute top-1/4 left-1/4 w-64 h-64 bg-nu-sky/10 rounded-full blur-3xl"
+            animate={{ 
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.5, 0.3],
+            }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          />
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden border border-gray-100 flex flex-col"
-          >
-             <div className="bg-gradient-to-r from-nu-secondary to-nu-accent-1 p-4 flex justify-between items-center">
-               <div>
-                  <h3 className="font-rubik text-2xl text-white font-bold">TABI</h3>
-                  <p className="font-poppins text-nu-accent-2 text-sm">Liderança</p>
-               </div>
-               <span className="bg-white/20 text-white text-xs px-2 py-1 rounded font-poppins">~ 4 min</span>
-            </div>
-            
-            <div className="p-6 flex-1">
-              <ul className="space-y-1">
-                <BulletPoint text="Registro, aprovação e qualificação de HE." />
-                <BulletPoint text="Conexão TABI x Locker na prática." />
-                <BulletPoint text="Boas práticas para uso responsável de Hora Extra." />
-                <BulletPoint text="Visão gerencial de jornada." />
-              </ul>
-            </div>
-          </motion.div>
+            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-nu-mid/10 rounded-full blur-3xl"
+            animate={{ 
+              scale: [1.2, 1, 1.2],
+              opacity: [0.3, 0.6, 0.3],
+            }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          />
         </div>
 
-        {/* Observation Footer */}
-        <motion.div 
+        {/* Grid Container */}
+        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start mt-4 flex-1">
+          
+          {/* Card LOCKER */}
+          <motion.div 
+            className="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-nu-mid hover:shadow-xl transition-shadow h-full flex flex-col"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="flex justify-between items-start mb-6 border-b border-gray-100 pb-4">
+              <h3 className="font-rubik text-2xl text-nu-primary">Locker · Atendentes</h3>
+              <span className="bg-nu-sky/20 text-nu-primary text-xs font-bold px-3 py-1 rounded-full">~ 3 minutos</span>
+            </div>
+            
+            <ul className="space-y-4 font-poppins text-gray-600 flex-1">
+              <li className="flex items-start gap-3">
+                 <div className="w-1.5 h-1.5 bg-nu-cyan rounded-full mt-2" />
+                 <span>Conceito de Agente Locker e bloqueios de jornada.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                 <div className="w-1.5 h-1.5 bg-nu-cyan rounded-full mt-2" />
+                 <span>Buffer de entrada/saída: como funciona.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                 <div className="w-1.5 h-1.5 bg-nu-cyan rounded-full mt-2" />
+                 <span>Importância do login/logout correto.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                 <div className="w-1.5 h-1.5 bg-nu-cyan rounded-full mt-2" />
+                 <span>Orientações práticas para o dia a dia.</span>
+              </li>
+            </ul>
+          </motion.div>
+
+          {/* Card TABI */}
+          <motion.div 
+            className="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-nu-secondary hover:shadow-xl transition-shadow h-full flex flex-col"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <div className="flex justify-between items-start mb-6 border-b border-gray-100 pb-4">
+              <h3 className="font-rubik text-2xl text-nu-secondary">TABI · Liderança</h3>
+              <span className="bg-nu-secondary/20 text-nu-secondary text-xs font-bold px-3 py-1 rounded-full">~ 4 minutos</span>
+            </div>
+
+            <ul className="space-y-4 font-poppins text-gray-600 flex-1">
+              <li className="flex items-start gap-3">
+                 <div className="w-1.5 h-1.5 bg-nu-mid rounded-full mt-2" />
+                 <span>Registro, aprovação e qualificação de HE.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                 <div className="w-1.5 h-1.5 bg-nu-mid rounded-full mt-2" />
+                 <span>Conexão TABI x Locker na prática.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                 <div className="w-1.5 h-1.5 bg-nu-mid rounded-full mt-2" />
+                 <span>Boas práticas para uso responsável de Hora Extra.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                 <div className="w-1.5 h-1.5 bg-nu-mid rounded-full mt-2" />
+                 <span>Visão gerencial de jornada.</span>
+              </li>
+            </ul>
+          </motion.div>
+
+        </div>
+
+        {/* Bottom Text */}
+        <motion.p 
+          className="text-center font-poppins text-gray-500 text-sm mt-8 italic"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="relative z-10 mt-12 bg-white px-8 py-4 rounded-full shadow-sm border border-gray-100 max-w-3xl text-center"
+          transition={{ delay: 0.5 }}
         >
-          <p className="font-poppins text-gray-500 text-sm">
-            Conteúdos curtos, direcionados e pensados para <span className="font-semibold text-nu-primary">minimizar impacto na operação</span>.
-          </p>
-        </motion.div>
-
+          Conteúdos curtos, direcionados e pensados para minimizar impacto na operação.
+        </motion.p>
       </div>
     </SlideLayout>
   );
 };
-
-export default Slide3;

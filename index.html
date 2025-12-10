@@ -3,65 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nubank Governança Locker</title>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Tailwind CSS -->
+    <title>Nubank - Governança Locker</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
           extend: {
+            colors: {
+              'nu-primary': '#225B8E', // Lápis Lazúli
+              'nu-secondary': '#2A898D', // Ciano Escuro
+              'nu-mid': '#3699BA', // Azul/Verde
+              'nu-sky': '#45C5DE', // Céu Azul
+              'nu-cyan': '#3BC2C7', // Ciano
+            },
             fontFamily: {
               rubik: ['Rubik', 'sans-serif'],
               poppins: ['Poppins', 'sans-serif'],
-            },
-            colors: {
-              'nu-primary': '#225B8E',
-              'nu-secondary': '#2A898D',
-              'nu-accent-1': '#3699BA',
-              'nu-accent-2': '#45C5DE',
-              'nu-accent-3': '#3BC2C7',
-            },
-            backgroundImage: {
-              'nu-gradient': 'linear-gradient(to right, #225B8E, #2A898D)',
-              'nu-gradient-vertical': 'linear-gradient(to bottom, #225B8E, #2A898D)',
             }
           }
         }
       }
     </script>
-
-    <!-- Import Map for Module Resolution -->
-    <script type="importmap">
+    <style>
+      body { margin: 0; overflow: hidden; }
+    </style>
+  <script type="importmap">
 {
   "imports": {
-    "react": "https://esm.sh/react@18.2.0",
-    "react-dom": "https://esm.sh/react-dom@18.2.0",
-    "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
-    "react/jsx-runtime": "https://esm.sh/react@18.2.0/jsx-runtime",
-    "framer-motion": "https://esm.sh/framer-motion@10.16.4",
+    "react/": "https://esm.sh/react@^19.2.1/",
+    "react": "https://esm.sh/react@^19.2.1",
     "react-dom/": "https://esm.sh/react-dom@^19.2.1/",
-    "react/": "https://esm.sh/react@^19.2.1/"
+    "framer-motion": "https://esm.sh/framer-motion@^12.23.26"
   }
 }
 </script>
-    
-    <style>
-      body {
-        margin: 0;
-        overflow: hidden; /* Prevent scrolling for presentation feel */
-        background-color: #f8f9fa;
-      }
-    </style>
-  <link rel="stylesheet" href="/index.css">
+<link rel="stylesheet" href="/index.css">
 </head>
   <body>
     <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
-</body>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>
