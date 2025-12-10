@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Slide1 } from './components/Slide1';
+import { SlidePrinciples } from './components/SlidePrinciples';
 import { Slide2 } from './components/Slide2';
 import { Slide3 } from './components/Slide3';
 import { Slide4 } from './components/Slide4';
@@ -7,7 +8,7 @@ import { Slide5 } from './components/Slide5';
 
 export const Presentation: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(1);
-  const totalSlides = 5;
+  const totalSlides = 6;
 
   const nextSlide = useCallback(() => {
     setCurrentSlide(prev => (prev < totalSlides ? prev + 1 : prev));
@@ -47,12 +48,14 @@ export const Presentation: React.FC = () => {
       case 1:
         return <Slide1 {...commonProps} />;
       case 2:
-        return <Slide2 {...commonProps} />;
+        return <SlidePrinciples {...commonProps} />;
       case 3:
-        return <Slide3 {...commonProps} />;
+        return <Slide2 {...commonProps} />;
       case 4:
-        return <Slide4 {...commonProps} />;
+        return <Slide3 {...commonProps} />;
       case 5:
+        return <Slide4 {...commonProps} />;
+      case 6:
         return <Slide5 {...commonProps} />;
       default:
         return <Slide1 {...commonProps} />;
