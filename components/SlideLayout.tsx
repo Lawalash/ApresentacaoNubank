@@ -32,7 +32,7 @@ export const SlideLayout: React.FC<SlideLayoutProps> = ({
           src={timeLogo} 
           alt="Time Logo" 
           className="object-contain rotate-90"
-          style={{ width: '300px', height: 'auto' }}
+          style={{ max-width: '300%', height: 'auto', margin-bottom:70px }}
         />
         </aside>
       )}
