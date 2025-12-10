@@ -25,7 +25,7 @@ export const Slide4: React.FC<SlideProps> = (props) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-6xl mx-auto">
           
           {/* Card 1: Ponto de Decisão */}
-          <motion.div 
+          <motion.div
             custom={0}
             variants={cardVariants}
             initial="hidden"
@@ -37,12 +37,12 @@ export const Slide4: React.FC<SlideProps> = (props) => {
               Em quanto tempo conseguimos treinar <strong>100% da operação NUBANK</strong>?
             </p>
             <p className="font-poppins text-sm text-gray-400">
-              Considerando ~3 min para Locker e ~4 min para TABI.
+              Considerando ~2 min para Locker e ~2 min 30 para TABI.
             </p>
           </motion.div>
 
           {/* Card 2: Janela Ideal */}
-          <motion.div 
+          <motion.div
             custom={1}
             variants={cardVariants}
             initial="hidden"
@@ -51,7 +51,7 @@ export const Slide4: React.FC<SlideProps> = (props) => {
           >
             <h3 className="font-rubik text-xl text-nu-mid mb-3 font-semibold">Janela Ideal</h3>
             <p className="font-poppins text-gray-600 leading-relaxed">
-              Qual a data de início e data limite para concluirmos os treinamentos de Locker (atendentes) e TABI (liderança)?
+              Qual a data de início e data limite para concluirmos Locker (atendentes) e TABI (liderança)?
             </p>
           </motion.div>
 
@@ -77,14 +77,14 @@ export const Slide4: React.FC<SlideProps> = (props) => {
         </div>
 
         {/* Footer Text */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
           className="mt-10 text-center"
         >
           <p className="font-poppins text-nu-primary/80 text-sm font-medium border-t border-gray-200 pt-6 inline-block px-8">
-            Próximos passos: estruturar plano com Planejamento (pausas/janelas) e iniciar reports periódicos de aderência.
+            Próximos passos: plano conjunto (Operação + Governança de Jornada + Planejamento) com pausas/janelas e reports periódicos de aderência.
           </p>
         </motion.div>
 

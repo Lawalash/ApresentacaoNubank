@@ -43,25 +43,37 @@ export const Slide3: React.FC<SlideProps> = (props) => {
           >
             <div className="flex justify-between items-start mb-6 border-b border-gray-100 pb-4">
               <h3 className="font-rubik text-2xl text-nu-primary">Locker · Atendentes</h3>
-              <span className="bg-nu-sky/20 text-nu-primary text-xs font-bold px-3 py-1 rounded-full">~ 3 minutos</span>
+              <span className="bg-nu-sky/20 text-nu-primary text-xs font-bold px-3 py-1 rounded-full">~ 2 minutos</span>
             </div>
-            
+
             <ul className="space-y-4 font-poppins text-gray-600 flex-1">
               <li className="flex items-start gap-3">
                  <div className="w-1.5 h-1.5 bg-nu-cyan rounded-full mt-2" />
-                 <span>Conceito de Agente Locker e bloqueios de jornada.</span>
+                 <span>Abre sozinho no início da jornada e acompanha todo o expediente.</span>
               </li>
               <li className="flex items-start gap-3">
                  <div className="w-1.5 h-1.5 bg-nu-cyan rounded-full mt-2" />
-                 <span>Buffer de entrada/saída: como funciona.</span>
+                 <span>Só libera login dentro do horário e desconecta ao término.</span>
               </li>
               <li className="flex items-start gap-3">
                  <div className="w-1.5 h-1.5 bg-nu-cyan rounded-full mt-2" />
-                 <span>Importância do login/logout correto.</span>
+                 <span>Hora extra só roda se o supervisor registrar a HE.</span>
               </li>
               <li className="flex items-start gap-3">
                  <div className="w-1.5 h-1.5 bg-nu-cyan rounded-full mt-2" />
-                 <span>Orientações práticas para o dia a dia.</span>
+                 <span>Importante clicar em “OK” nos status e “Sair” ao encerrar a jornada.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                 <div className="w-1.5 h-1.5 bg-nu-cyan rounded-full mt-2" />
+                 <span>Pausas NR 17: Locker mostra quando fazer; pausa é direito, não luxo.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                 <div className="w-1.5 h-1.5 bg-nu-cyan rounded-full mt-2" />
+                 <span>Histórico mostra tempo trabalhado, saldo e previsão de saída.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                 <div className="w-1.5 h-1.5 bg-nu-cyan rounded-full mt-2" />
+                 <span>Mensagem central: Locker traz tranquilidade, controle e segurança ao atendente.</span>
               </li>
             </ul>
           </motion.div>
@@ -75,25 +87,37 @@ export const Slide3: React.FC<SlideProps> = (props) => {
           >
             <div className="flex justify-between items-start mb-6 border-b border-gray-100 pb-4">
               <h3 className="font-rubik text-2xl text-nu-secondary">TABI · Liderança</h3>
-              <span className="bg-nu-secondary/20 text-nu-secondary text-xs font-bold px-3 py-1 rounded-full">~ 4 minutos</span>
+              <span className="bg-nu-secondary/20 text-nu-secondary text-xs font-bold px-3 py-1 rounded-full">~ 2 min 30</span>
             </div>
 
             <ul className="space-y-4 font-poppins text-gray-600 flex-1">
               <li className="flex items-start gap-3">
                  <div className="w-1.5 h-1.5 bg-nu-mid rounded-full mt-2" />
-                 <span>Registro, aprovação e qualificação de HE.</span>
+                 <span>Ferramenta de controle inteligente de jornada integrada ao Locker e ao ponto.</span>
               </li>
               <li className="flex items-start gap-3">
                  <div className="w-1.5 h-1.5 bg-nu-mid rounded-full mt-2" />
-                 <span>Conexão TABI x Locker na prática.</span>
+                 <span>HE aprovada no TABI gera jornada precisa, segura e rastreável no Locker.</span>
               </li>
               <li className="flex items-start gap-3">
                  <div className="w-1.5 h-1.5 bg-nu-mid rounded-full mt-2" />
-                 <span>Boas práticas para uso responsável de Hora Extra.</span>
+                 <span>Fluxo: checar bolsão/período, horas disponíveis e distribuir por matrícula.</span>
               </li>
               <li className="flex items-start gap-3">
                  <div className="w-1.5 h-1.5 bg-nu-mid rounded-full mt-2" />
-                 <span>Visão gerencial de jornada.</span>
+                 <span>Limite máximo de 1h45 de HE por operador.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                 <div className="w-1.5 h-1.5 bg-nu-mid rounded-full mt-2" />
+                 <span>Visualize a lista de operadores com HE atribuída.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                 <div className="w-1.5 h-1.5 bg-nu-mid rounded-full mt-2" />
+                 <span>Boas práticas: não passar do limite, não autorizar em baixo volume, não usar só planilhas.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                 <div className="w-1.5 h-1.5 bg-nu-mid rounded-full mt-2" />
+                 <span>Mensagem central: TABI é a fotografia da operação e apoio para decisões seguras.</span>
               </li>
             </ul>
           </motion.div>
@@ -107,7 +131,7 @@ export const Slide3: React.FC<SlideProps> = (props) => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
-          Conteúdos curtos, direcionados e pensados para minimizar impacto na operação.
+          Vídeos curtos, fáceis de consumir e feitos para dar segurança e baixo impacto na operação.
         </motion.p>
       </div>
     </SlideLayout>
